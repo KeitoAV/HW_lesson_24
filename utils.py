@@ -25,7 +25,7 @@ def get_query(cmd: str, val: str, file: Iterator) -> List[Any]:
         return res
 
     if cmd == "regex":
-        # val = images\/(\w+|(\w+-\w+)|.{1,})\.png
+        # val = r'images\/(\w+|(\w+-\w+)|.{1,})\.png'
         regex = re.compile(val)
         res = list(filter(lambda x: regex.search(x), file))
         return res

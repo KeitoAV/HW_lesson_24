@@ -16,7 +16,7 @@ payload = {
 
    'cmd1': 'regex',
 
-   'value1': 'images/\\w+\\.png',
+   'value1': 'images\/(\w+|(\w+-\w+)|.{1,})\.png',
 
    'cmd2': 'sort',
 
