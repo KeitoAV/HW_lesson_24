@@ -17,8 +17,11 @@ def get_page() -> str:
            '<p>' + '/perform_query/?cmd1=filter&val1=POST&cmd2=unique&val2=""&file_name=apache_logs.txt' + '</p>' + \
            '<p>' + '/perform_query/?cmd1=filter&val1=POST&cmd2=sort&val2=desc&file_name=apache_logs.txt' + '</p>' + \
            '<p>' + '/perform_query/?cmd1=filter&val1=POST&file_name=apache_logs.txt' + '</p>' + \
-           '<p>' + '/perform_query/?cmd1=regex&val1=images/\\w+\\.png&cmd2=sort&val2=asc&file_name=apache_logs.txt'
+           '<p>' + '/perform_query/?cmd1=regex&val1=images\/(\w+|(\w+-\w+)|.{1,})\.png&cmd2=sort&val2=asc&file_name=apache_logs.txt'
 
+
+# images\/(\w+|(\w+-\w+)|.{1,})\.png
+# images/\\w+\\.png
 
 @app.route("/perform_query/")
 def perform_query() -> Response:
